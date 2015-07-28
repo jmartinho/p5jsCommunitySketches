@@ -35,15 +35,15 @@ var contaMouse=0;
 var MX = tamanhoWIDTH/2;
 var MY = tamanhoHEIGHT/2;
 
-//var img;
+
 
 
 var corReset='#efefef';
 
-  p.setup = function() {
-    // put setup code here
-    p.createCanvas(p.windowWidth, p.windowHeight);
-    p.background(corReset);
+p.setup = function() {
+	// put setup code here
+	p.createCanvas(p.windowWidth, p.windowHeight);
+	p.background(corReset);
 
 	for (var i = 0; i < numeroPontos; i++) {
 	    NumerosArrayX[i] = p.random(0,tamanhoWIDTH); //tamanhoWIDTH/2;
@@ -54,33 +54,12 @@ var corReset='#efefef';
 	    RND_NumerosArrayX[i] = tamanhoWIDTH/2;
 	    RND_NumerosArrayY[i] = tamanhoHEIGHT/2;
 	}
-	/*
-	for (var i=0;i<100;i++){
-		p.draw();
-	}
-	*/
-
-	//img = loadImage('assets/p5-asterisk.png');  // 
 
 	    
-  };
+};
 
-  p.draw = function() {
-	//p.ellipse(MX,40,40,40);
+p.draw = function() {
 
-/*
-	p.stroke(200);
-	if (contadorTempoRefresh<1){
-
-		for (var i=0;i<tamanhoWIDTH;i=i+tamanhoWIDTH/100){
-
-			p.line(i+ p.random(-1000,1000),-10,i + p.random(-1000,1000),tamanhoHEIGHT+10);
-
-
-		}
-
-	}
-*/
 	tempoApaga ++;
 
 	if (tempoApaga>100) {
@@ -92,17 +71,14 @@ var corReset='#efefef';
 
 	tempo++;
 
-//	if (p.mousePressed) {
-//	    MX = p.mouseX;
-//	    MY = p.mouseY;
-//	}else {
-	    if (tempo>5) {
-	    	var padding = -5;
-	    	MX = (p.random (-500, tamanhoWIDTH+500)); //(padding*2,tamanhoWIDTH-padding*2));
-	    	MY = (p.random (padding,tamanhoHEIGHT-padding));
-	    	tempo=0;
-	    }
-//	}
+
+    if (tempo>5) {
+    	var padding = -5;
+    	MX = (p.random (-500, tamanhoWIDTH+500)); //(padding*2,tamanhoWIDTH-padding*2));
+    	MY = (p.random (padding,tamanhoHEIGHT-padding));
+    	tempo=0;
+    }
+
 
 	contaMouse ++;
 
@@ -190,18 +166,13 @@ var corReset='#efefef';
 
 
 			//if (p.random(100)<20){
-				p.fill(45, 123, 182,255);
+			p.fill(45, 123, 182,255);
 	    	
-	    	//for (var j=0;j<2;j++){
-	    		p.ellipse(RND_NumerosArrayX[i]+p.random(-150,150),RND_NumerosArrayY[i]+p.random(-150,150),tamanhoBola,tamanhoBola);
+	    	p.ellipse(RND_NumerosArrayX[i]+p.random(-150,150),RND_NumerosArrayY[i]+p.random(-150,150),tamanhoBola,tamanhoBola);
+	    	
 	    	//}
 
-	    	//}
-
-	    	//if (i>5){
-			//p.line(NumerosArrayX[p.random(numeroPontos)],NumerosArrayY[p.random(numeroPontos)],NumerosArrayX[p.random(numeroPontos)],NumerosArrayY[p.random(numeroPontos)]);
-
-	    	//}
+	    	
 
 	    }
 
@@ -213,25 +184,13 @@ var corReset='#efefef';
 	    RND_NumerosArrayX[i] = RND_NumerosArrayX[i] + (p.random(-8,8));
 	    RND_NumerosArrayY[i] = RND_NumerosArrayY[i] + (p.random(-8,8));
 	    
-	    /*
-	    if (NumerosArrayX[i]<0 || NumerosArrayX[i]>tamanhoWIDTH) NumerosArrayX[i] =  p.random(0,tamanhoWIDTH);
-	    if (NumerosArrayY[i]<0 || NumerosArrayY[i]>tamanhoHEIGHT) NumerosArrayY[i] =  p.random(0,tamanhoHEIGHT);
-	    
-	    if (RND_NumerosArrayX[i]<0 || RND_NumerosArrayX[i]>tamanhoWIDTH) RND_NumerosArrayX[i] =  p.random(0,tamanhoWIDTH);
-	    if (RND_NumerosArrayY[i]<0 || RND_NumerosArrayY[i]>tamanhoHEIGHT) RND_NumerosArrayY[i] = p.random(0,tamanhoHEIGHT);
-	    */
+
 	    
 
-	    //image(img, 100, 100);
+
 	  }
 
-	  /*
-	  contadorTempoRefresh++;
-	  if (contadorTempoRefresh>50000) {
-	    p.background(corReset);
-	    //contadorTempoRefresh=0;
-	  }
-		*/
+
     
   };
 };
